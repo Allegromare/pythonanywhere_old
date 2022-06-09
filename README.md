@@ -52,3 +52,6 @@ env) giu@Air-di-Giu pythonanywhere % flask run
 10. Effettuare gli aggiustamenti
 
 11.
+
+12.
+
