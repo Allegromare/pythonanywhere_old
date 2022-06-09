@@ -35,7 +35,7 @@ pip install flask
 
 flask run
 
-7. Aprire l'indirizzo internet evidenziato
+7. Aprire l'indirizzo internet evidenziato per verificare il funzionamento del server
 
 env) giu@Air-di-Giu pythonanywhere % flask run
 
@@ -44,3 +44,11 @@ env) giu@Air-di-Giu pythonanywhere % flask run
   Use a production WSGI server instead.
 - Debug mode: off
 - Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+
+8. Creare un account su Pythonanywhere
+
+9. Clonare il repository Github su Pythonanywhere
+
+10. Effettuare gli aggiustamenti
+
+11.
