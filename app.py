@@ -19,10 +19,10 @@ def git_update():
 def index():
     return render_template("index.html")
 
-@app.route('/primo/')
-def index():
+@app.route('/primo/', methods=["GET"])
+def primo():
     return render_template("primo.html")
 
-@app.route('/secondo/')
-def index():
+@app.route('/secondo/', methods=["GET"])
+def secondo():
     return render_template("secondo.html")
