@@ -8,10 +8,9 @@ app = Flask(__name__)
 
 @app.route('/git_update', methods=['POST'])
 def git_update():
-    repo = Repo('./orbe')
+    repo = Repo('./pythonanywhere')
     origin = repo.remotes.origin
-    repo.create_head('main',
-                     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+    repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
     origin.pull()
     return '', 200
 
