@@ -18,3 +18,11 @@ def git_update():
 @app.route('/')
 def index():
     return render_template("index.html")
+
+@app.route('/primo/')
+def index():
+    return render_template("primo.html")
+
+@app.route('/secondo/')
+def index():
+    return render_template("secondo.html")
