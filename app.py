@@ -3,7 +3,6 @@ from git import Repo  # GitPython library (to install: pip install GitPython)
 
 app = Flask(__name__)
 
-
 # Route for the GitHub webhook
 
 @app.route('/git_update', methods=['POST'])
@@ -18,9 +17,9 @@ def git_update():
 def index():
     return render_template("index.html")
 
-@app.route('/primo/', methods=["GET"])
+@app.route('/covid19/', methods=["GET"])
 def primo():
-    return render_template("primo.html")
+    return render_template("covid19.html")
 
 @app.route('/secondo/', methods=["GET"])
 def secondo():
