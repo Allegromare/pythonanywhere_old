@@ -15,7 +15,9 @@ else:
     next(fileCovid)
     for record in fileCovid:
         nuovi_positivi.append([record[0], record[8]])
-        print(nuovi_positivi + "\n")
+        print(nuovi_positivi)
+        print()
+        
 
         #giorno = record[0]
         #nuoviPositivi = record[8]
