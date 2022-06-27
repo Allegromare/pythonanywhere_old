@@ -19,6 +19,6 @@ def download_nuovi_positivi():
         next(fileCovid)
         for row in fileCovid:
             #nuovi_positivi.append([row[0], row[8]])
-            nuovi_positivi[row[0]] = row[8]]
+            nuovi_positivi[row[0]] = row[8]
 
     return nuovi_positivi
