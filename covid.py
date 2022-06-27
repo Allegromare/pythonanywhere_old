@@ -5,7 +5,9 @@ URL_COVID_ITALIA = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/da
 
 def download_nuovi_positivi():
 
-    nuovi_positivi = [[], []]
+    # nuovi_positivi = [[], []]
+
+    nuovi_positivi = {}
 
     # 2. download the data behind the URL
     response = requests.get(URL_COVID_ITALIA)
@@ -15,9 +17,8 @@ def download_nuovi_positivi():
     else:
         fileCovid = csv.reader(response.text.strip().split("\n"))
         next(fileCovid)
-        for record in fileCovid:
-            nuovi_positivi.append([record[0], record[8]])
+        for row in fileCovid:
+            #nuovi_positivi.append([row[0], row[8]])
+            nuovi_positivi[row[0]] = row[8]]
 
-    print(nuovi_positivi[[0][0]])
-    
     return nuovi_positivi
