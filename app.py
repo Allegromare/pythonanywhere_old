@@ -23,6 +23,9 @@ def primo():
     download_nuovi_positivi()
     print(nuovi_positivi)
 
+    giorno = nuovi_positivi[0]
+    n_positivi = nuovi_positivi[0]
+    
     return render_template("covid19.html")
 
 @app.route('/secondo/', methods=["GET"])
