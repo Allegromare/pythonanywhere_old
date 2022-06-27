@@ -27,6 +27,7 @@ def primo():
 
     #giorno = nuovi_positivi[0]
     #n_positivi = nuovi_positivi[0]
+    n_positivi = 1
     
     return render_template("covid19.html", n_positivi=n_positivi)
 
