@@ -14,7 +14,7 @@ else:
     fileCovid = csv.reader(response.text.strip().split("\n"))
     next(fileCovid)
     for record in fileCovid:
-        nuovi_positivi.append(record[0], record[8])
+        nuovi_positivi.append([record[0], record[8]])
         print(nuovi_positivi)
 
         #giorno = record[0]
