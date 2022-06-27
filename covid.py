@@ -6,6 +6,7 @@ URL_COVID_ITALIA = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/da
 # 2. download the data behind the URL
 response = requests.get(URL_COVID_ITALIA)
 
+# 3. Insert data in a set
 if response.status_code != 200:
     print("Download dei dati non riuscito")
 else:
@@ -14,8 +15,8 @@ else:
     for record in fileCovid:
         giorno = record[0]
         nuoviPositivi = record[8]
-        print("Giorno: " + giorno)
-        print("Numero Nuovi Positivi: " + nuoviPositivi)
+        # print("Giorno: " + giorno)
+        # print("Numero Nuovi Positivi: " + nuoviPositivi)
 
 
     

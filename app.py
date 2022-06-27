@@ -1,6 +1,10 @@
 from flask import Flask, render_template
 from git import Repo  # GitPython library (to install: pip install GitPython)
 
+# Import other python files
+import covid
+
+# Start
 app = Flask(__name__)
 
 # Route for the GitHub webhook
@@ -18,8 +22,12 @@ def index():
     return render_template("index.html")
 
 @app.route('/covid19/', methods=["GET"])
-def primo():
-    return render_template("covid19.html")
+def covid19():
+    giorno ="31/12/2022"
+    nuoviPositivi = 3.000
+    
+    return render_template(
+        "covid19.html", giorno=giorno, nuoviPositivi=nuoviPositivi)
 
 @app.route('/secondo/', methods=["GET"])
 def secondo():
