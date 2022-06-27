@@ -9,11 +9,21 @@ response = requests.get(URL_COVID_ITALIA)
 if response.status_code != 200:
     print("Download dei dati non riuscito")
 else:
-    fileCovid = csv.reader(response.text.strip().split("\n"))
-    next(fileCovid)
-    for record in fileCovid:
-        giorno = record[0]
-        nuoviPositivi = record[8]
+    #fileCovid = csv.reader(response.text.strip().split("\n"))
+    #next(fileCovid)
+    #for record in fileCovid:
+    #    giorno = record[0]
+    #    nuoviPositivi = record[8]
+    #    print("Giorno: " + giorno)
+    #    print("Numero Nuovi Positivi: " + nuoviPositivi)
+
+    fileCovid = csv.DictReader(response.text)
+    
+    # scrive i dati in una nuova lista con solamente data e numero positivi
+    
+    for row in fileCovid:
+        giorno = row[0]
+        nuoviPositivi = row[8]
         print("Giorno: " + giorno)
         print("Numero Nuovi Positivi: " + nuoviPositivi)
 
