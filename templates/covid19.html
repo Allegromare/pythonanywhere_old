@@ -11,9 +11,10 @@
   </thead>
 
   <tbody>
+    {% for row in nuovi_positivi }}
     <tr>
-      <td>Giorno</td>
-      <td>{{ n_positivi }}</td>
+      <td>{{ row }}</td>
+      <td>{{ nuovi_positivi[row] }}</td>
     </tr>
   </tbody>
 </table>

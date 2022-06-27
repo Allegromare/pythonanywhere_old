@@ -29,7 +29,7 @@ def primo():
     #n_positivi = nuovi_positivi[0]
     n_positivi = nuovi_positivi['2020-02-25T18:00:00']
     
-    return render_template("covid19.html", n_positivi=n_positivi)
+    return render_template("covid19.html", nuovi_positivi=nuovi_positivi)
 
 @app.route('/secondo/', methods=["GET"])
 def secondo():
