@@ -2,4 +2,20 @@
 
 <h1>Codìvid 19</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Numero nuovi positivi</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for record in nuovi_positivi %}
+    <tr>
+      <td>{{ giorno }}</td>
+      <td>{{ nuovi_positivi }}</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}

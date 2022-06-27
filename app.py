@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from git import Repo  # GitPython library (to install: pip install GitPython)
+from covid import download_nuovi_positivi
 
 app = Flask(__name__)
 
@@ -19,6 +20,9 @@ def index():
 
 @app.route('/covid19/', methods=["GET"])
 def primo():
+    download_nuovi_positivi()
+    print(nuovi_positivi)
+
     return render_template("covid19.html")
 
 @app.route('/secondo/', methods=["GET"])
