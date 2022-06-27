@@ -7,7 +7,7 @@ def download_nuovi_positivi():
 
     # nuovi_positivi = [[], []]
 
-    nuovi_positivi = {}
+    nuovi_positivi_inverso = {}
 
     # 2. download the data behind the URL
     response = requests.get(URL_COVID_ITALIA)
@@ -19,6 +19,8 @@ def download_nuovi_positivi():
         next(fileCovid)
         for row in fileCovid:
             #nuovi_positivi.append([row[0], row[8]])
-            nuovi_positivi[row[0][: 10]] = row[8]
-
+            nuovi_positivi_inverso[row[0][: 10]] = row[8]
+    
+    nuovi_positivi = dict(reversed(list(nuovi_positivi_inverso.items())))
+    
     return nuovi_positivi
