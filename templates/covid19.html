@@ -4,4 +4,20 @@
 
 <div><p>Data: {{ giorno }} Nuovi casi positivi: {{ nuoviPositivi }}</p></div>
 
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Numero nuovi positivi</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for row in nuovi_positivi }}
+    <tr>
+      <td>{{ row }}</td>
+      <td>{{ nuovi_positivi[row] }}</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}

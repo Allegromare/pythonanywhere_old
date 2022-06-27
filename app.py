@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from git import Repo  # GitPython library (to install: pip install GitPython)
+from covid import download_nuovi_positivi
 
 # Import other python files
 import covid
