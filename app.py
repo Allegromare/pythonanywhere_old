@@ -22,12 +22,13 @@ def index():
 def primo():
     
     nuovi_positivi = download_nuovi_positivi()
+    n_positivi=nuovi_positivi[[0],[0]]
     print(nuovi_positivi)
 
     #giorno = nuovi_positivi[0]
     #n_positivi = nuovi_positivi[0]
     
-    return render_template("covid19.html")
+    return render_template("covid19.html", n_positivi=n_positivi)
 
 @app.route('/secondo/', methods=["GET"])
 def secondo():
