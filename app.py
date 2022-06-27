@@ -22,8 +22,8 @@ def index():
 def primo():
     
     nuovi_positivi = download_nuovi_positivi()
-    n_positivi=nuovi_positivi[[0],[0]]
-    print(nuovi_positivi)
+    n_positivi = nuovi_positivi['2020-02-24T18:00:00']
+    print(n_positivi)
 
     #giorno = nuovi_positivi[0]
     #n_positivi = nuovi_positivi[0]
