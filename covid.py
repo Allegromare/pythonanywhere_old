@@ -17,7 +17,7 @@ else:
     #    print("Giorno: " + giorno)
     #    print("Numero Nuovi Positivi: " + nuoviPositivi)
 
-    print(response)
+    print(response.content)
 
     # fileCovid = csv.DictReader(response.text)
     
