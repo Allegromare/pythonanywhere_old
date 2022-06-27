@@ -18,4 +18,6 @@ def download_nuovi_positivi():
         for record in fileCovid:
             nuovi_positivi.append([record[0], record[8]])
 
+    print(nuovi_positivi[[0][0]])
+    
     return nuovi_positivi
