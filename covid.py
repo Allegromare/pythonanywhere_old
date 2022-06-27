@@ -3,6 +3,8 @@ import requests, csv
 
 URL_COVID_ITALIA = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv"
 
+nuovi_positivi = [[], []]
+
 # 2. download the data behind the URL
 response = requests.get(URL_COVID_ITALIA)
 
@@ -12,23 +14,14 @@ else:
     fileCovid = csv.reader(response.text.strip().split("\n"))
     next(fileCovid)
     for record in fileCovid:
-        giorno = record[0]
-        nuoviPositivi = record[8]
-        print("Giorno: " + giorno)
-        print("Numero Nuovi Positivi: " + nuoviPositivi)
+        nuovi_positivi.append(record[0], record[8])
+        print(nuovi_positivi)
 
-    # print(response.content)
-
-    # fileCovid = csv.DictReader(response.text)
-    
-    # scrive i dati in una nuova lista con solamente data e numero positivi
-    
-    #for row in fileCovid:
-        #giorno = row['stato']
-        #nuoviPositivi = row['nuovi_positivi']
+        #giorno = record[0]
+        #nuoviPositivi = record[8]
         #print("Giorno: " + giorno)
         #print("Numero Nuovi Positivi: " + nuoviPositivi)
-        #print(row)
+
 
 
     
