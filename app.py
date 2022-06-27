@@ -20,11 +20,12 @@ def index():
 
 @app.route('/covid19/', methods=["GET"])
 def primo():
-    download_nuovi_positivi()
+    
+    nuovi_positivi = download_nuovi_positivi()
     print(nuovi_positivi)
 
-    giorno = nuovi_positivi[0]
-    n_positivi = nuovi_positivi[0]
+    #giorno = nuovi_positivi[0]
+    #n_positivi = nuovi_positivi[0]
     
     return render_template("covid19.html")
 
