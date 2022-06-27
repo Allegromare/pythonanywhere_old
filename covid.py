@@ -17,16 +17,18 @@ else:
     #    print("Giorno: " + giorno)
     #    print("Numero Nuovi Positivi: " + nuoviPositivi)
 
-    fileCovid = csv.DictReader(response.text)
+    print(response)
+
+    # fileCovid = csv.DictReader(response.text)
     
     # scrive i dati in una nuova lista con solamente data e numero positivi
     
-    for row in fileCovid:
+    #for row in fileCovid:
         #giorno = row['stato']
         #nuoviPositivi = row['nuovi_positivi']
         #print("Giorno: " + giorno)
         #print("Numero Nuovi Positivi: " + nuoviPositivi)
-        print(row)
-        
+        #print(row)
+
 
     
