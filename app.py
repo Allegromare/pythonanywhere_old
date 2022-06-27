@@ -23,11 +23,11 @@ def primo():
     
     nuovi_positivi = download_nuovi_positivi()
     #n_positivi = nuovi_positivi['2020-02-24T18:00:00']
-    print(nuovi_positivi['2020-02-24T18:00:00'])
+    print(nuovi_positivi['2020-02-25T18:00:00'])
 
     #giorno = nuovi_positivi[0]
     #n_positivi = nuovi_positivi[0]
-    n_positivi = nuovi_positivi['2020-02-24T18:00:00']
+    n_positivi = nuovi_positivi['2020-02-25T18:00:00']
     
     return render_template("covid19.html", n_positivi=n_positivi)
 
