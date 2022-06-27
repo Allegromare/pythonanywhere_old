@@ -22,8 +22,8 @@ else:
     # scrive i dati in una nuova lista con solamente data e numero positivi
     
     for row in fileCovid:
-        giorno = row[data]
-        nuoviPositivi = row[nuovi_positivi]
+        giorno = row['data']
+        nuoviPositivi = row['nuovi_positivi']
         print("Giorno: " + giorno)
         print("Numero Nuovi Positivi: " + nuoviPositivi)
 
