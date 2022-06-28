@@ -1,11 +1,7 @@
 from flask import Flask, render_template
 from git import Repo  # GitPython library (to install: pip install GitPython)
-from covid import download_nuovi_positivi
+from downloadDataCovid import download_nuovi_positivi_ita_csv, download_nuovi_positivi_ita_json, download_nuovi_positivi_lazio_json
 
-# Import other python files
-import covid
-
-# Start
 app = Flask(__name__)
 
 # Route for the GitHub webhook
@@ -22,17 +18,20 @@ def git_update():
 def index():
     return render_template("index.html")
 
-@app.route('/covid19/', methods=["GET"])
-def covid19():
-    giorno ="31/12/2022"
-    nuoviPositivi = 3.000
-    
-    return render_template(
-        "covid19.html", giorno=giorno, nuoviPositivi=nuoviPositivi)
+@app.route('/covid19ItaCsv/', methods=["GET"])
+def covid19ItaCsv():
+    nuovi_positivi = download_nuovi_positivi_ita_csv()
+    return render_template("covid19ItaCsv.html", nuovi_positivi=nuovi_positivi)
 
-@app.route('/secondo/', methods=["GET"])
-def secondo():
-    return render_template("secondo.html")
+@app.route('/covid19ItaJson/', methods=["GET"])
+def covid19ItaJson():
+    nuovi_positivi = download_nuovi_positivi_ita_json()
+    return render_template("covid19ItaJson.html", nuovi_positivi=nuovi_positivi)
+
+@app.route('/covid19LazioJson/', methods=["GET"])
+def covid19LazioJson():
+    nuovi_positivi = download_nuovi_positivi_lazio_json()
+    return render_template("covid19LazioJson.html", nuovi_positivi=nuovi_positivi)
 
 @app.errorhandler(404)
 def page_not_found(e):

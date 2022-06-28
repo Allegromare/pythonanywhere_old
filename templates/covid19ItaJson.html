@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block body %}
+
+<h1>Covid 19 - Lazio</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Numero nuovi positivi</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for row in nuovi_positivi %}
+    <tr>
+      <td>{{ row }}</td>
+      <td>{{ '{0:,}'.format(nuovi_positivi[row]) }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,11 +1,43 @@
 {% extends "layout.html" %} {% block body %}
 
 <h1>Allegromare</h1>
-<p>Scegli uno dei progetti</p>
-<ol>
-  <li><a href="/covid19">Covid 19</a></li>
-  <li><a href="/secondo">Secondo</a></li>
-  <li><a href="/covid19">Covid 19 - Nuovi Positivi Italia</a></li>
-</ol>
 
+<div class="grid">
+  <div>
+    <article>
+      <p>Covid 19 - Nuovi Casi Italia</p>
+      <a href="/covid19ItaJson" role="button">Vai</a>
+    </article>
+  </div>
+
+  <div>
+    <article>
+      <p>Covid 19 - Nuovi Casi Lazio</p>
+      <a href="/covid19LazioJson" role="button">Vai</a>
+    </article>
+  </div>
+
+  <div>
+    <article>I'm a card!</article>
+  </div>
+</div>
+
+<p>Altri progetti:</p>
+<ol>
+  <li>
+    <a href="/covid19ItaCsv"
+      >Covid 19 - Nuovi Positivi Italia (using csv data)</a
+    >
+  </li>
+  <li>
+    <a href="/covid19ItaJson"
+      >Covid 19 - Nuovi Positivi Italia (using json data)</a
+    >
+  </li>
+  <li>
+    <a href="/covid19LazioJson"
+      >Covid 19 Nuovi Positivi Lazio (using json data)</a
+    >
+  </li>
+</ol>
 {% endblock %}
