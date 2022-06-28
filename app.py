@@ -18,6 +18,12 @@ def git_update():
 def index():
     return render_template("index.html")
 
+@app.route('/covid19/', methods=["GET"])
+def covid19():
+    nuovi_positivi_ita = download_nuovi_positivi_ita_json()
+    nuovi_positivi_lazio = download_nuovi_positivi_lazio_json()
+    return render_template("covid19.html", nuovi_positivi_ita=nuovi_positivi_ita, nuovi_positivi_lazio=nuovi_positivi_lazio)
+
 @app.route('/covid19ItaCsv/', methods=["GET"])
 def covid19ItaCsv():
     nuovi_positivi = download_nuovi_positivi_ita_csv()

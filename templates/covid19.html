@@ -1,0 +1,64 @@
+{% extends "layout.html" %} {% block body %}
+
+<h1>Covid 19</h1>
+
+<div class="grid">
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Numero nuovi positivi Italia</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for row in nuovi_positivi_ita %}
+        <tr>
+          <td>{{ row }}</td>
+          <td>{{ '{0:,}'.format(nuovi_positivi_ita[row]) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Numero nuovi positivi Lazio</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for row in nuovi_positivi_lazio %}
+      <tr>
+        <td>{{ row }}</td>
+        <td>{{ '{0:,}'.format(nuovi_positivi_lazio[row]) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div></div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Numero nuovi positivi Italia</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for row in nuovi_positivi_ita, nuovi_positivi_lazio %}
+    <tr>
+      <td>{{ row }}</td>
+      <td>{{ nuovi_positivi_ita[row] }}</td>
+      <td>{{ nuovi_positivi_lazio[row] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
