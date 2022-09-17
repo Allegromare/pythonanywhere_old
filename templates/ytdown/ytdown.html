@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block body %}
+
+<h1>YTDown - YouTube Downloader</h1>
+
+<h2>Inserisci il link YouTube del video</h2>
+
+<form method="POST">
+    <input type="text", placeholder = "https://www.youtube.com/watch?v=......", name = "yt_url">
+    <button type="submit">Search</button>
+</form>
+
+{% endblock %}

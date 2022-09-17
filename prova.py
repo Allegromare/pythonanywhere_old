@@ -1,12 +1,12 @@
-# 1. Import libraries
-import requests, json
+import random
 
 
-f = requests.get('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+class Hat:
+    houses = ["Griffondor", "Slytherin"]
 
-print(type(f))
+    @classmethod
+    def guess(cls, name):
+        return random.choice(cls.houses)
 
-superHeroSquad = f.json()
-print(type(superHeroSquad))
 
-print(superHeroSquad.keys())
+print(Hat.guess("Henry"))
