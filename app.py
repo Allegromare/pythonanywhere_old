@@ -3,12 +3,14 @@ from pytube import YouTube
 from io import BytesIO
 
 from git import Repo  # GitPython library (to install: pip install GitPython)
+
 from downloadDataCovid import (
     download_nuovi_positivi_ita_csv,
     download_nuovi_positivi_ita_json,
     download_nuovi_positivi_lazio_json,
 )
 
+from speech import speech
 
 app = Flask(__name__)
 app.config[
@@ -83,9 +85,15 @@ def ytdown_download_video():
     return render_template("/ytdown/ytdown_found.html")
 
 
-@app.route("/daUtilizzare/", methods=["GET"])
-def daUtilizzare():
-    return render_template("/daUtilizzare/daUtilizzare.html")
+@app.route("/text2speech/", methods=["GET", "POST"])
+def text2speech():
+    if request.method == "POST":
+        text = request.form["speech"]
+        gender = request.form["voices"]
+        speech(text, gender)
+        return render_template("/text2speech/text2speech.html")
+    else:
+        return render_template("/text2speech/text2speech.html")
 
 
 @app.route("/covid19ItaCsv/", methods=["GET"])
